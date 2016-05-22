@@ -71,16 +71,19 @@
   (assoc book :authors (conj (:authors book) new-author)))
 
 (defn alive? [author]
-  :-)
+  (not (:death-year author)))
 
 (defn element-lengths [collection]
-  :-)
+  (map count collection))
 
 (defn second-elements [collection]
-  :-)
+;;second seems to be valid clojure, not sure if I was expected to rewrite it? Let's do it
+;;  (map second collection))
+
+(map (fn [x] (first(rest x))) collection))
 
 (defn titles [books]
-  :-)
+  (map :title books))
 
 (defn monotonic? [a-seq]
   :-)
